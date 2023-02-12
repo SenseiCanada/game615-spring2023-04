@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlaneScript : MonoBehaviour
 {
-    float forwardSpeed = 5;
-    float rotateSpeed = 50;
+    public float forwardSpeed;
+    public float rotateSpeed;
     public GameObject Paperclip;
     public GameObject ShootPoint;
     int score = 0;
-  
+    float originSpeed;
     public TMP_Text donutScore;
     public GameObject SpawnPoint;
-    public GameObject paperPlane;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        originSpeed = forwardSpeed;
     }
 
     // Update is called once per frame
@@ -37,9 +37,9 @@ public class PlaneScript : MonoBehaviour
         {
             GameObject clip = Instantiate(Paperclip, ShootPoint.transform.position, Quaternion.identity);
             Rigidbody rb = clip.GetComponent<Rigidbody>();
-            rb.AddForce(ShootPoint.transform.forward * 1000);
+            rb.AddForce((ShootPoint.transform.forward * 2000 * (score + 1.1f))/2f);
 
-            Destroy(clip, 3f);
+            Destroy(clip, 2f);
         }
     }
 
@@ -49,13 +49,19 @@ public class PlaneScript : MonoBehaviour
         if (other.CompareTag("enemy"))
         {
             gameObject.transform.position = SpawnPoint.transform.position;
-            
+            gameObject.transform.rotation = SpawnPoint.transform.rotation;
+            forwardSpeed = originSpeed;
+            score = 0;
+            donutScore.text = score.ToString();
         }
 
         if (other.CompareTag("wall"))
         {
             gameObject.transform.position = SpawnPoint.transform.position;
-
+            gameObject.transform.rotation = SpawnPoint.transform.rotation;
+            forwardSpeed = originSpeed;
+            score = 0;
+            donutScore.text = score.ToString();
 
         }
 
@@ -63,6 +69,8 @@ public class PlaneScript : MonoBehaviour
         {
             score++;
             donutScore.text = score.ToString();
+            forwardSpeed = forwardSpeed + score;
+
         }
     }
 }

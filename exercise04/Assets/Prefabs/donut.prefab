@@ -11,7 +11,10 @@ GameObject:
   - component: {fileID: 2572257864558315948}
   - component: {fileID: 4663878821091884623}
   - component: {fileID: 1144265216073417487}
-  - component: {fileID: 798342238}
+  - component: {fileID: 7719131539129394961}
+  - component: {fileID: 7719131539129394960}
+  - component: {fileID: 7719131539129394959}
+  - component: {fileID: 7719131539129394958}
   m_Layer: 0
   m_Name: donutSprinkles
   m_TagString: wall
@@ -88,8 +91,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &798342238
-MeshCollider:
+--- !u!65 &7719131539129394961
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -98,10 +101,48 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2676547712749244357, guid: 2902736aee1158d42851c7a0b6189556, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.24505873, y: 0.09499235, z: 0.09138789}
+  m_Center: {x: -1.4070524e-10, y: 0.047496084, z: -0.0967614}
+--- !u!65 &7719131539129394960
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3464697649761895603}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.24505873, y: 0.09499235, z: 0.084323645}
+  m_Center: {x: -1.0253047e-10, y: 0.047496084, z: 0.0993231}
+--- !u!65 &7719131539129394959
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3464697649761895603}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07677899, y: 0.09499235, z: 0.28296933}
+  m_Center: {x: -0.082211226, y: 0.0474961, z: -0.000000027682852}
+--- !u!65 &7719131539129394958
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3464697649761895603}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07731142, y: 0.09499235, z: 0.28296933}
+  m_Center: {x: 0.08387398, y: 0.047496084, z: -0.000000027682853}
 --- !u!1 &7484618560785839128
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,7 +154,7 @@ GameObject:
   - component: {fileID: 7824270160518131362}
   m_Layer: 0
   m_Name: donut
-  m_TagString: wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

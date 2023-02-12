@@ -1,5 +1,89 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &813375573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 813375576}
+  - component: {fileID: 813375575}
+  - component: {fileID: 813375574}
+  m_Layer: 6
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &813375576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813375573}
+  m_LocalRotation: {x: 0.09434213, y: 0.019411393, z: -0.0018401188, w: 0.9953489}
+  m_LocalPosition: {x: -0.03422278, y: 1.2625971, z: -2.997054}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8966924721190910818}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &813375575
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813375573}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.9150943, g: 0.58272517, b: 0.889961, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &813375574
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813375573}
+  m_Enabled: 1
 --- !u!1 &6153713204432227561
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4179238349999545759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +127,7 @@ GameObject:
   - component: {fileID: 8966924721190910819}
   - component: {fileID: 8966924721190910816}
   - component: {fileID: 8966924721190910829}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: paperPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,6 +148,7 @@ Transform:
   m_Children:
   - {fileID: 8933545149413126566}
   - {fileID: 4179238349999545759}
+  - {fileID: 813375576}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -81,7 +166,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &8966924721190910816
 BoxCollider:
@@ -108,11 +193,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fe6178cdd84a4e11a2c0cbaa4b9dcca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forwardSpeed: 10
+  rotateSpeed: 50
   Paperclip: {fileID: 414546134752199106, guid: 82699509b5829e4439cca59900ec87bc, type: 3}
   ShootPoint: {fileID: 6153713204432227561}
   donutScore: {fileID: 0}
   SpawnPoint: {fileID: 0}
-  paperPlane: {fileID: 8966924721190910817}
 --- !u!1001 &8966924720432977485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -183,6 +269,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c053731b13f6bde4f9ff4f04c503a92e, type: 3}
       propertyPath: m_Name
       value: model
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c053731b13f6bde4f9ff4f04c503a92e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705941544360418313, guid: c053731b13f6bde4f9ff4f04c503a92e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c053731b13f6bde4f9ff4f04c503a92e, type: 3}
