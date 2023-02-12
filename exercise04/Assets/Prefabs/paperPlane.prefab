@@ -110,6 +110,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Paperclip: {fileID: 414546134752199106, guid: 82699509b5829e4439cca59900ec87bc, type: 3}
   ShootPoint: {fileID: 6153713204432227561}
+  donutScore: {fileID: 0}
+  SpawnPoint: {fileID: 0}
+  paperPlane: {fileID: 8966924721190910817}
 --- !u!1001 &8966924720432977485
 PrefabInstance:
   m_ObjectHideFlags: 0

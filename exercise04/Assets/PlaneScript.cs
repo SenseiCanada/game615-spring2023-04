@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using TMPro;
 
 public class PlaneScript : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class PlaneScript : MonoBehaviour
     float rotateSpeed = 50;
     public GameObject Paperclip;
     public GameObject ShootPoint;
+    int score = 0;
+  
+    public TMP_Text donutScore;
+    public GameObject SpawnPoint;
+    public GameObject paperPlane;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +25,8 @@ public class PlaneScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      
+
         float hAxis = Input.GetAxis("Horizontal");
         gameObject.transform.Rotate(0, rotateSpeed * Time.deltaTime * hAxis, 0);
 
@@ -27,12 +35,7 @@ public class PlaneScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // This will instantiate and launch 100 prefabs of the banana car.
-
             GameObject clip = Instantiate(Paperclip, ShootPoint.transform.position, Quaternion.identity);
-            //float rotXAmount = Random.Range(-89, -10);
-            //float rotYAmount = Random.Range(0, 360);
-            //car.transform.Rotate(rotXAmount, rotYAmount, 0);
             Rigidbody rb = clip.GetComponent<Rigidbody>();
             rb.AddForce(ShootPoint.transform.forward * 1000);
 
@@ -45,17 +48,21 @@ public class PlaneScript : MonoBehaviour
 
         if (other.CompareTag("enemy"))
         {
-            Destroy(gameObject);
+            gameObject.transform.position = SpawnPoint.transform.position;
+            
         }
 
         if (other.CompareTag("wall"))
         {
-            Destroy(gameObject);
+            gameObject.transform.position = SpawnPoint.transform.position;
+
+
         }
 
         if (other.CompareTag("score"))
         {
-            //Destroy(other.gameObject);
+            score++;
+            donutScore.text = score.ToString();
         }
     }
 }
