@@ -7,6 +7,9 @@ Team: Jacob Laden-Guindon, Mingheng Li
 ## Assets used
 
 Paper Plane by Anonymous [CC-BY] via Poly Pizza
+
 Donut Sprinkles byKenney
+
 Paperclip by Poly by Google [CC-BY] via Poly Pizza
+
 File Folder by Ryan Dewalt [CC-BY] via Poly Pizza
