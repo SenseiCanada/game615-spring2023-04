@@ -2,7 +2,7 @@
 
 Team: Jacob Laden-Guindon, Mingheng Li
 
-[Playable link to game](https://raltshunter.github.io/game615-spring2023-03/exercise04/play/)
+[Playable link to game](https://senseicanada.github.io/game615-spring2023-03/exercise04/play/)
 
 ## Assets used
 
