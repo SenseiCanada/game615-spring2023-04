@@ -5,7 +5,7 @@ Team: Jacob Laden-Guindon, Mingheng Li
 [Playable link to game](https://senseicanada.github.io/game615-spring2023-04/exercise04/play/)
 
 
-##Challenges
+## Challenges
 
 Make it so the plane can create and launch items forward towards some target (i.e. it can shoot stuff). Something should happen when the launched item collides with the other object (e.g. score should increase or something).
 
